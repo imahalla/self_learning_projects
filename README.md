@@ -1,2 +1,2 @@
 # self_learning_projects
-In this project i used smtplib to send email via Gmail account.
+In this project i used smtplib to send an email via Gmail account.
