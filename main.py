@@ -41,9 +41,13 @@ def send_mail():
         else:
             recipient, subject, text = get_recipient_address_subject_and_text()
             message = f'Subject: {subject}\n\n{text}'
-            session.sendmail(user, recipient, message)
-            session.quit()
-            print('Message sent :)')
+            try:
+                session.sendmail(user, recipient, message)
+                print('Message sent :)')
+            except Exception as error:
+                print("failed to send the email due to error:", error)
+            finally:
+                session.quit()
 
 
 send_mail()
